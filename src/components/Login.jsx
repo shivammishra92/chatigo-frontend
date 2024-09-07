@@ -22,7 +22,7 @@ function Login() {
       password: data.password,
     };
     // console.log(userInfo);
-    axios.post("https://chatigo-backend.onrender.com/user/login", userInfo)
+    axios.post("https://chatigo-backend.onrender.com/api/user/login", userInfo)
       .then((response) => {
         if (response.data) {
           toast.success("Login successful");
