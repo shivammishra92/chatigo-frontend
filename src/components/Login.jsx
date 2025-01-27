@@ -22,13 +22,16 @@ function Login() {
       password: data.password,
     };
     // console.log(userInfo);
-    axios.post("https://chatigo-backend.onrender.com/api/user/login", userInfo)
+    // axios.post("https://chatigo-backend.onrender.com/api/user/login", userInfo)
+    axios.post("/api/user/login", userInfo)
       .then((response) => {
         if (response.data) {
           toast.success("Login successful");
         }
         localStorage.setItem("Chatigo", JSON.stringify(response.data));
         setAuthUser(response.data);
+        console.log(response.data);
+        console.log(response)
       })
       .catch((error) => {
         if (error.response) {
